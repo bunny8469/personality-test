@@ -1,3 +1,4 @@
+            
 function id(x){
     return document.getElementById(x)
 }
@@ -26,10 +27,10 @@ var list = [
     },
     {
         quest:"What do you choose",
-        ans1: "Everyone wiped off the face of the earth, except you",
+        ans1: "Everyone wiped off from the earth, except you",
         img2: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Crowd_at_Knebworth_House_-_Rolling_Stones_1976.jpg",
         des1: "You chose A. Then you’re confident and self-assured you don’t rely on others and are independent do you think more for yourself and less about others when making decisions relating to you. You don't mind being alone",
-        ans2: "Be everyone including you is wiped off the face of the earth",
+        ans2: "Everyone including you is wiped off from the earth",
         img1: "https://cdn.pixabay.com/photo/2019/12/04/15/38/alone-4672965_960_720.jpg",
         des2: "You chose B. Then you are very social and don’t like to be alone you live for others and love seeing your friends and family. You may be less independent but you make up for that with how much you value others"
     },
@@ -47,7 +48,7 @@ var list = [
         ans1: "Marry a good-looking person with a bad personality",
         img1: "https://dl.dropbox.com/s/d7ssdj43g7p0v7g/Good%20Looking%20and%20bad%20personality.png?",
         des1: "You chose to marry A, then you think on your feet. You may also rush into relationship and act on impulse in day-to-day situations",
-        ans2: "Marry a bad looking person with a great personality",
+        ans2: "Marry a bad-looking person with a great personality",
         img2: "https://dl.dropbox.com/s/zemmou8j5o5l030/Good%20Looking%20and%20bad%20personality%281%29.png",
         des2: "You chose to marry B then you are good at weighing up situations. You ease into relationships and ensure that person’s right for you. You’re spiritually and emotionally in tune and have a deep understanding of the human condition"
     },
@@ -75,7 +76,7 @@ var list = [
         img1: "https://c1.wallpaperflare.com/preview/507/66/503/calendar-pay-number-year.jpg",
         des1: "You chose A. You are curious, sometimes too much for your own good. You’re not too emotional and take things as they come you live a busy life and if you are just sitting around this, it means you’re productive and live to get stuff done",
         ans2: "Know how you’re going to pass away",
-        img2: "file:///tmp/mozilla_bunny0/accident-bicycle-bike-police-1751211.jpg",
+        img2: "https://cdn.pixabay.com/photo/2017/09/26/19/40/car-accident-2789841_960_720.jpg",
         des2: "You picked B. then you’re a practical and pragmatic thinker. You thrive off a sense of security and enjoy the simple things in life feel good. It’s working through problems and you’re likely hard-boiled and tough"
     },
     {
@@ -104,7 +105,7 @@ function nextQuestion(){
     presentQuestion++
     if (presentQuestion == 11){
         id("question-page").style.display = "none"
-        id("end-page").style.display = "block"
+        id("finish-page").style.display = "block"
     }
     var dict = list[presentQuestion-1]
     var question = dict.quest
@@ -151,18 +152,21 @@ function start(){
     id("rules").style.display = "none"
     id("start").style.display = "none"
     id("question-page").style.display = "block"
-    id("box1").style.width = "100vw"
-    id("box1").style.height = "50vh"
-    id("box2").style.top = "50vh"
-    id("box2").style.left = "0"
-    id("box2").style.width = "100vw"
-    id("box2").style.height = "50vh"
+    if(screen.width < 750){
+        id("box1").style.width = "100vw"
+        id("box1").style.height = "50vh"
+        id("box2").style.top = "50vh"
+        id("box2").style.left = "0"
+        id("box2").style.width = "100vw"
+        id("box2").style.height = "50vh"
+    }
     id("header").innerText = "Pick an option from below"
     nextQuestion()
 }
 function workOnOtherPages(){
     id("start").style.display = "none"
     id("question-page").style.display = "none"
+    id("finish-page").style.display = "block"
 }
 function secondOver(){
     if(parseInt(id("timer").innerText) == 0){
@@ -176,4 +180,3 @@ function secondOver(){
         id("timer").innerText = parseInt(id("timer").innerText)-1
     } 
 }
-
