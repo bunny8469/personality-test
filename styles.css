@@ -7,11 +7,13 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
 }
 header{
     font-family:'ubuntu condensed';
     font-size:170%;
     width:100vw;
+    display:none;
     height:auto;
     padding:10px;
     text-align:center;
@@ -171,35 +173,36 @@ header{
 }
 
 img{
-    width: 40vw;
-    height:20vh;
+    width: 60vw;
+    height:25vh;
     border-radius:20px 20px 0 0;
+    background-color: #fff;
 }
 .option-text{
     border-radius:0 0 20px 20px;
     height:auto;
     min-height:7vh;
-    width:40vw;
+    width:60vw;
     display: flex;
     justify-content: center;
     align-items:center;
-    font-family:"satisfy";
-    font-size:90%;
+    font-family:"chelsea market";
+    font-size:120%;
     background-color: #fff;
     text-align:center;
+    margin-top:-10px;
     border-top:2px solid #eee;
 }
 #options{
     position: absolute;
-    top:60%;
-    transform:translate(0,-60%);
+    top:25vh;
+    left:50vw;
+    transform:translate(-50%,-25%);
     margin:0;
-    display: flex;
-    justify-content: center;
 }
 .option{
-    margin-left:5vw;
-    margin-right:5vw;
+    margin-top:12.5vh;
+    margin-bottom:12.5vh;
 }
 #timer{
     background-color:white;
@@ -215,32 +218,62 @@ img{
     position: fixed;
     left:50vw;
     top:50vh;
-    margin-top:5vh;
-    transform:translate(-50%,0);
+    transform:translate(-50%,-50%);
 }
 #end-page{
     padding:10px;
     background-color:#eee;
     min-height:90vh;
 }
+#finish-page{
+    display: none;
+    z-index:5;
+    height:60vh;
+    background-color:#333;
+    width: 90vw;
+    padding:2vh;
+}
+.finish-head{
+    font-family:"raleway";
+    font-weight: bolder;
+    font-size:120%;
+    color:lightgreen;
+}
+.finish-des{
+    color:white;
+    font-family:"poppins";
+    font-size:95%;
+}
+.finish-foot{
+    font-family:"ubuntu";
+    font-size:90%;
+    position: absolute;
+    bottom:19vh;
+    color:#ddd;
+}
+.whatsapp-share{
+    color:white;
+    background-color:#25D366;
+    text-decoration: none;
+    padding:10px;
+    font-family:"poppins";
+    margin-left:20vw;
+    border:1px solid #25D366;
+    transition:0.4s;
+}
+.whatsapp-share:hover{
+    color:#25D366;
+    background-color:#333;
+}
+.fa-whatsapp{
+    transform: scale(1.2);
+    margin-right:5px;
+}
 
 
 
 /* For Computers */
 @media (min-width:750px){
-    .box1,.box2{
-    height:100vh;
-    width:50vw;
-    max-width:50vw;
-    min-width:50vw;
-    max-height:100vh;
-    min-height:100vh;
-}
-.box2{
-    left:50vw;
-    bottom:0;
-    background-color:#b4f2e1;
-}
     header{
         width:100vw;
         font-size:200%;
@@ -280,9 +313,32 @@ img{
         height:70vh;
         width:60vw;
     }
-    .option-text{
+    #finish-page{
+        width:40vw;
+    }
+    #options{
+        display: flex;
+        justify-content: center;
+        position:absolute;
+        margin:0;
+        top:40vh;
+        left:20vw;
+        transform: translate(-20%,-35%);
+    }
+    .whatsapp-share{
+        margin-left:12vw;
+    }
+    #option1{
+        margin-right:10vw;
+        margin-left:20vw;
+    }
+    #option2{
+        margin-left:10vw;
+        margin-right:20vw;
+    }
+    .option-text{   
         min-height:6vh;
-        font-family: "satisfy";
+        font-family: "chelsea market";
         font-size:150%;
         width:20vw;
         height: auto;
@@ -292,12 +348,14 @@ img{
     }
     #timer{
         width:auto;
+        min-width:9vw;
         height:60px;
         padding: 0 20px 0 20px;
-        font-size:160%;
+        font-size:175%;
         position: absolute;
-        left:50%;
-       margin-top:5vh;
+        top:50vh;
+        left:50vw;
+        transform: translate(-50%,-50%);
     }
     img{
         height:30vh;
